@@ -1,0 +1,15 @@
+export { default as SearchSvg } from "./search.svg";
+export { default as VerifiedSvg } from "./verified.svg";
+export { default as InstSvg } from "./insta.svg";
+export { default as SpotifySvg } from "./Spotify.svg";
+export { default as TwitterSvg } from "./Twitter.svg";
+export { default as FavoriteSvg } from "./favorite.svg";
+export { default as More_vertSvg } from "./more_vert.svg";
+export { default as KeyDownvertSvg } from "./keyboard_arrow_down.svg";
+export { default as PlaySvg } from "./play_circle.svg";
+export { default as HorizSvg } from "./more_horiz.svg";
+export { default as Download } from "./download.svg";
+export { default as Currency } from "./currency_rupee.svg";
+export { default as NewRealse } from "./nl.svg";
+export { default as ShoppingBag } from "./sb.svg";
+export { default as AudioWave } from "./Audio.svg";
