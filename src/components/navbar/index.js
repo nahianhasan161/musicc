@@ -5,16 +5,57 @@ import SearchIcon from "../../../public/assests/search.png";
 import P1 from "../../../public/assests/p1.png";
 import C1 from "../../../public/assests/cart.png";
 import { SearchSvg } from "@/svgicon";
+import { MdDehaze, MdSearch } from "react-icons/md";
+
+
 
 const NavMenu = () => {
   return (
-    <div className=" border-b-[1px]  border-border_color  bg-black">
-      <div className=" container mx-auto">
-        <div className=" flex py-4 justify-between text-[16px] items-center">
+    <div className=" border-b-[1px]  border-border_color   bg-black">
+      <div className=" px-6 container mx-auto">
+        {/* mobile menu */}
+        <div className="  flex items-center py-8 justify-between sm:hidden">
           <div>
+
+            <div className=" w-[44px] h-[44px]">
+              <Image src={Logo} height={60} width={60} className="w-full h-full" alt="logo" />
+
+            </div>
+            <div>
+
+
+
+            </div>
+
+          </div>
+          <div>
+            <div className=" text-white_300 flex gap-3 "> <input className="  bg-transparent " /><MdSearch className=" text-[20px]" /> <MdDehaze className=" text-[20px]" />
+              <div className=" w-[48px] flex justify-center  items-center h-[25px] bg-yellow rounded-[23px]">
+                <Image src={C1} alt="cart" />
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+        <div className=" hidden  sm:flex py-4 justify-between text-[16px] items-center">
+          {/* mobile menu */}
+          <div>
+
+            <Image src={Logo} height={55} width={55} alt="logo" />
+
+          </div>
+          <div>
+
+
+          </div>
+          <div className=" hidden">
+
             <ul className=" flex gap-4 text-white capitalize items-center">
               <li>
-                <Image src={Logo} height={55} width={55} />
+                <Image src={Logo} height={55} width={55} alt="logo" />
               </li>
               <li>tracks</li>
               <li>pricing</li>

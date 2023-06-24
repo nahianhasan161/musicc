@@ -8,18 +8,18 @@ const Typography = ({ className, children, variant, ...props }) => {
       className={classNames(
         "  text-zapp-black",
         variant === "h1"
-          ? `  text-[1.4rem] lg:text-[2.3rem]   font-semibold `
+          ? `  text-[1.75rem] lg:text-[2.25rem]   font-bold `
           : variant === "h2"
-          ? " text-lg lg:text-[2rem]  font-semibold"
-          : variant === "h3"
-          ? " text-lg  font-bold"
-          : variant === "h4"
-          ? "text-[0.9rem]  sm:text-[1.5rem] font-semibold"
-          : variant === "h5"
-          ? " text-sm  font-bold"
-          : variant === "h6"
-          ? " teaxt-base"
-          : "",
+            ? " text-lg lg:text-[2rem]  font-semibold"
+            : variant === "h3"
+              ? " text-lg  font-bold"
+              : variant === "h4"
+                ? "text-[0.8rem]  sm:text-[1.2rem] font-semibold"
+                : variant === "h5"
+                  ? " text-sm  font-bold"
+                  : variant === "h6"
+                    ? " teaxt-base"
+                    : "",
         className
       )}
       {...props}

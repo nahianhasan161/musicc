@@ -31,13 +31,14 @@ export default function Slider({ playlist }) {
         {playlist.map((song, i) => {
           return (
             <>
-              <div className=" h-[260px] w-[259px]">
+              <div className=" sm:h-[260px] sm:w-[259px]">
                 {" "}
                 <Image
                   src={song.image}
                   height={200}
                   width={200}
                   className=" w-full h-full object-cover"
+                  alt="song"
                 />
                 {i === 0 && (
                   <div className=" absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
@@ -46,7 +47,7 @@ export default function Slider({ playlist }) {
                 )}
               </div>
               <div className=" text-white_300 pt-2">
-                <h2 className=" ">{song.title}</h2>
+                <h2 className="text-[18px] ">{song.title}</h2>
                 <div className=" flex items-center gap-2">
                   <span className=" font-light">{song.name}</span>{" "}
                   <span className=" font-light">{song.icon}</span>

@@ -131,7 +131,7 @@ const smililarTrack = [
 const Artist = () => {
   return (
     <div>
-      <div className=" container mx-auto w-full  pt-28 ">
+      {/* <div className=" container mx-auto w-full  pt-28 ">
         <div className=" h-[300px]   w-full  pt-48  bg-gradient-to-r from-purple-600 to-blue-600">
           <div className="  w-full">
             <div className=" flex  justify-between items-center  w-full">
@@ -526,9 +526,9 @@ const Artist = () => {
             </div>
           </div>
          
-        </div>
-      </div>
-   
+        </div> */}
+    </div>
+
   );
 };
 
