@@ -12,12 +12,12 @@ import { MdDehaze, MdSearch } from "react-icons/md";
 const NavMenu = () => {
   return (
     <div className=" border-b-[1px]  border-border_color   bg-black">
-      <div className=" px-6 container mx-auto">
+      <div className=" px-5 sm:px-0 container mx-auto">
         {/* mobile menu */}
         <div className="  flex items-center py-8 justify-between sm:hidden">
           <div>
 
-            <div className=" w-[44px] h-[44px]">
+            <div className="  w-[44px] h-[44px]">
               <Image src={Logo} height={60} width={60} className="w-full h-full" alt="logo" />
 
             </div>
@@ -29,8 +29,10 @@ const NavMenu = () => {
 
           </div>
           <div>
-            <div className=" text-white_300 flex gap-3 "> <input className="  bg-transparent " /><MdSearch className=" text-[20px]" /> <MdDehaze className=" text-[20px]" />
-              <div className=" w-[48px] flex justify-center  items-center h-[25px] bg-yellow rounded-[23px]">
+            <div className="   text-white_300 flex gap-3 ">
+              <input className=" w-[8.5rem]  bg-transparent " />
+              <MdSearch className=" text-[20px]" /> <MdDehaze className=" text-[20px]" />
+              <div className=" w-[32px]   flex justify-center  items-center h-[20px] sm:h-[25px] bg-yellow rounded-[23px]">
                 <Image src={C1} alt="cart" />
               </div>
             </div>
@@ -41,7 +43,7 @@ const NavMenu = () => {
 
         </div>
         <div className=" hidden  sm:flex py-4 justify-between text-[16px] items-center">
-          {/* mobile menu */}
+
           <div>
 
             <Image src={Logo} height={55} width={55} alt="logo" />

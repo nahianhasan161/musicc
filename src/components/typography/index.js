@@ -6,7 +6,7 @@ const Typography = ({ className, children, variant, ...props }) => {
   return (
     <div
       className={classNames(
-        "  text-zapp-black",
+        "   w-full",
         variant === "h1"
           ? `  text-[1.75rem] lg:text-[2.25rem]   font-bold `
           : variant === "h2"

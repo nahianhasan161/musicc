@@ -142,25 +142,32 @@ const Artist = () => {
       <div className=" px-5 container mx-auto w-full pt-6  sm:pt-28 ">
         <div className=" h-[185px]  sm:h-[300px]   w-full pt-[94px]  sm:pt-48  bg-gradient-to-r from-purple-600 to-blue-600">
           <div className="  w-full  ">
-            <div className=" flex flex-col justify-center items-center sm:flex-row  sm:justify-between">
-              <div className=" flex flex-col sm:flex-row sm:gap-10  pl-3">
-                <div className="  bg-black rounded-full ml-[64px] sm:ml-0  h-[145px] w-[145px] sm:h-[250px] sm:w-[250px]">
-                  <Image
-                    src={Profile}
-                    height={500}
-                    width={500}
-                    className=" object-cover w-full h-full"
-                    alt=""
-                  />
-                </div>
-                <div className="text-white_300  sm:mt-[8rem]  ">
-                  <div className=" flex items-center gap-5">
-                    <Typography variant={"h1"} className="  pl-[4rem] sm:pl-0 font-bold text-[36px]">Olive James</Typography>{" "}
-                    <span>
-                      <VerifiedSvg />
-                    </span>
+            <div className=" flex  items-center justify-center  sm:flex-row  sm:justify-between pl-3">
+              <div className="  flex flex-col sm:flex-row sm:gap-10 ">
+                <div className=" flex justify-center   sm:justify-start">
+
+
+                  <div className="  bg-black rounded-full sm:ml-0  h-[145px] w-[145px] sm:h-[250px] sm:w-[250px]">
+                    <Image
+                      src={Profile}
+                      height={500}
+                      width={500}
+                      className=" object-cover w-full h-full"
+                      alt=""
+                    />
                   </div>
-                  <span className="pl-[5rem] sm:pl-0" >@OliveJamesMusic</span>
+                </div>
+                <div className="text-white_300   sm:mt-[8rem]  ">
+                  <div className="flex items-center  justify-center  sm:justify-start sm:flex-none">
+                    <div>
+                      <Typography variant={"h1"} className="  text-center  flex items-center  gap-3  sm:pl-0 font-bold ">Olive James  <span>
+                        <VerifiedSvg />
+                      </span></Typography>
+                    </div>
+
+
+                  </div>
+                  <div className=" text-center sm:text-left" >@OliveJamesMusic</div>
                   <p className=" pt-3 text-center  sm:text-left text-[1rem] sm:text-[20px] font-light leading-[23px]">
                     Multi platinum Record Producer <br />
                     .Drake, Kendrik Lamar, Joyner.
