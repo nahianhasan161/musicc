@@ -161,11 +161,11 @@ const Artist = () => {
                     </span>
                   </div>
                   <span className="pl-[5rem] sm:pl-0" >@OliveJamesMusic</span>
-                  <p className=" pt-3 stext-center  sm:text-left text-[1rem] sm:text-[20px] font-light leading-[23px]">
+                  <p className=" pt-3 text-center  sm:text-left text-[1rem] sm:text-[20px] font-light leading-[23px]">
                     Multi platinum Record Producer <br />
                     .Drake, Kendrik Lamar, Joyner.
                   </p>
-                  <div className=" flex gap-6 item-center justify-center sm:justify-start  flex  mt-4 sm:mt-8">
+                  <div className=" gap-6 item-center justify-center sm:justify-start  flex  mt-4 sm:mt-8">
                     <span>
                       <InstSvg />
                     </span>
@@ -249,7 +249,7 @@ const Artist = () => {
 
         </div>
 
-        <div className="  mt-[50rem] ">
+        <div className="  mt-[62rem] sm:mt-[50rem] ">
           <div className=" flex justify-between ktem-center sm:hidden">
             <div>
               <MdTune className=" text-white_300 text-2xl" />
