@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import { Button } from "@/components/button";
 import Typography from "@/components/typography";
@@ -6,6 +6,7 @@ import Profile from "../../public/assests/DP.png";
 import SongImage from "../../public/assests/image 6.png";
 import Picture from "../../public/assests/image 12.png";
 import Cover from "../../public/assests/c.png"
+import { songsdata } from '@/datalist/audio';
 
 import {
   MdShuffle,
@@ -16,6 +17,7 @@ import {
   MdRepeat,
   MdShoppingBag,
   MdTune,
+  MdPause,
   MdMoreVert
 } from "react-icons/md";
 import {
@@ -137,6 +139,43 @@ const smililarTrack = [
   },
 ];
 const Artist = () => {
+
+  const audioRef = useRef(null);
+  const [songs, setSongs] = useState(songsdata[0]);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isShuffle, setIsShuffle] = useState(false);
+  const [isRepeat, setIsRepeat] = useState(false);
+  const [volume, setVolume] = useState(0.5);
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play()
+    } else {
+
+      audioRef.current.pause()
+    }
+
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    setIsPlaying(!isPlaying);
+  };
+
+  const toggleShuffle = () => {
+    setIsShuffle(!isShuffle);
+  };
+
+  const toggleRepeat = () => {
+    setIsRepeat(!isRepeat);
+  };
+
+  const handleVolumeChange = (event) => {
+    const newVolume = parseFloat(event.target.value);
+    setVolume(newVolume);
+    audioRef.current.volume = newVolume;
+  };
+
+
   return (
     <div>
       <div className=" px-5 container mx-auto w-full pt-6  sm:pt-28 ">
@@ -483,10 +522,10 @@ const Artist = () => {
       <div className=" px-20 hidden    mt-10  sm:flex  justify-between items-center bg-black_100 py-3">
         <div className=" flex justify-between items-center gap-10">
 
-
+          <audio ref={audioRef} src={songs.url} controls={false} autoPlay={isPlaying} />
           <div>
 
-            < MdShuffle className=" text-white_300 text-[24px]" />
+            < MdShuffle className=" text-white_300 text-[24px]" onClick={toggleShuffle} />
 
           </div>
           <div>
@@ -495,8 +534,11 @@ const Artist = () => {
 
           </div>
           <div>
+            {
+              isPlaying ? < MdPause className=" text-white_300 text-[24px]" onClick={togglePlay} /> : < MdPlayArrow className=" text-white_300 text-[24px]" onClick={togglePlay} />
+            }
 
-            < MdPlayArrow className=" text-white_300 text-[24px]" />
+
 
           </div>
 
@@ -507,16 +549,21 @@ const Artist = () => {
           </div>
           <div>
 
-            <  MdRepeat className=" text-white_300   text-[24px]" />
+            <  MdRepeat className=" text-white_300   text-[24px]" onClick={toggleRepeat} />
 
           </div>
           <div>
             <AudioWave />
           </div>
           <div className="flex items-center">
-            <div>   <label for="range" class="font-bold  text-white_300"><MdVolumeUp className=" text-[30px]" /></label></div>
+            <div>   <label for="range" className="font-bold  text-white_300"><MdVolumeUp className=" text-[30px]" /></label></div>
             <div>
-              <input type="range" name="price" min="1" max="100" value="10" class="w-full rounded-lg h-2 bg-white_300 appearance-none" />
+              <input type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange} classNameS="w-full rounded-lg h-2 bg-white_300 appearance-none" />
             </div>
           </div>
 
