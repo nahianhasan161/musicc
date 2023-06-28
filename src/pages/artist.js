@@ -1,12 +1,34 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/button";
 import Typography from "@/components/typography";
 import Profile from "../../public/assests/DP.png";
 import SongImage from "../../public/assests/image 6.png";
 import Picture from "../../public/assests/image 12.png";
-import Cover from "../../public/assests/c.png"
-import { songsdata } from '@/datalist/audio';
+import Cover from "../../public/assests/c.png";
+import { songsdata } from "@/datalist/audio";
+// import Wavesurfer from "react-wavesurfer";
+
+// import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js";
+// import RegionsPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
+import dynamic from "next/dynamic";
+
+const Wavesurfer = dynamic(() => import("react-wavesurfer"), {
+  ssr: false,
+});
+// const TimelinePlugin = dynamic(
+//   () => import("wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js"),
+//   {
+//     ssr: false,
+//   }
+// );
+// const RegionsPlugin = dynamic(
+//   () => import("wavesurfer.js/dist/plugin/wavesurfer.regions.min.js"),
+//   {
+//     ssr: false,
+//   }
+// );
+// import WaveSurfer from "wavesurfer.js";
 
 import {
   MdShuffle,
@@ -18,7 +40,10 @@ import {
   MdShoppingBag,
   MdTune,
   MdPause,
-  MdMoreVert
+  MdRepeatOne,
+  MdMoreVert,
+  MdShuffleOn,
+  MdVolumeOff,
 } from "react-icons/md";
 import {
   VerifiedSvg,
@@ -33,11 +58,11 @@ import {
   ShoppingBag,
   Currency,
   PlaySvg,
-  AudioWave
+  AudioWave,
 } from "@/svgicon";
 
 import Slider from "@/components/slider";
-import { classNames } from '@/helper/classNames';
+import { classNames } from "@/helper/classNames";
 const playlist = [
   {
     title: "Drake Type Beats",
@@ -139,26 +164,39 @@ const smililarTrack = [
   },
 ];
 const Artist = () => {
-
   const audioRef = useRef(null);
   const [songs, setSongs] = useState(songsdata[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isShuffle, setIsShuffle] = useState(false);
   const [isRepeat, setIsRepeat] = useState(false);
   const [volume, setVolume] = useState(0.5);
+  const [disable, setDisable] = useState(true);
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current.play()
+      audioRef.current.play();
     } else {
-
-      audioRef.current.pause()
+      audioRef.current.pause();
     }
-
   }, [isPlaying]);
+  const handlePrev = () => {
+    if (!songsdata.length < 0) {
+      setDisable(true);
+    } else {
+      setSongs(songsdata[songsdata.length - 1]);
+    }
+  };
+  const handleNex = () => {
+    if (!songsdata.length === songsdata.length) {
+      setDisable(true);
+    } else {
+      setSongs(songsdata[songsdata.length - 1]);
+    }
+  };
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
+    setPlaying(!playing);
   };
 
   const toggleShuffle = () => {
@@ -168,13 +206,32 @@ const Artist = () => {
   const toggleRepeat = () => {
     setIsRepeat(!isRepeat);
   };
+  const [playing, setPlaying] = useState(false);
+  const [pos, setPos] = useState(0);
+
+  const handleTogglePlay = () => {};
+
+  const handlePosChange = (e) => {
+    setPos(e.originalArgs[0]);
+  };
+
+  const waveOptions = {
+    barGap: 15,
+
+    height: 60,
+    progressColor: "#0056CF",
+    waveColor: "#C1CDD6",
+    normalize: true,
+    barWidth: 3,
+    barRadius: 3,
+  };
 
   const handleVolumeChange = (event) => {
     const newVolume = parseFloat(event.target.value);
     setVolume(newVolume);
     audioRef.current.volume = newVolume;
   };
-
+  console.log(volume);
 
   return (
     <div>
@@ -184,8 +241,6 @@ const Artist = () => {
             <div className=" flex  items-center justify-center  sm:flex-row  sm:justify-between pl-3">
               <div className="  flex flex-col sm:flex-row sm:gap-10 ">
                 <div className=" flex justify-center   sm:justify-start">
-
-
                   <div className="  bg-black rounded-full sm:ml-0  h-[145px] w-[145px] sm:h-[250px] sm:w-[250px]">
                     <Image
                       src={Profile}
@@ -199,14 +254,20 @@ const Artist = () => {
                 <div className="text-white_300   sm:mt-[8rem]  ">
                   <div className="flex items-center  justify-center  sm:justify-start sm:flex-none">
                     <div>
-                      <Typography variant={"h1"} className="  text-center  flex items-center  gap-3  sm:pl-0 font-bold ">Olive James  <span>
-                        <VerifiedSvg />
-                      </span></Typography>
+                      <Typography
+                        variant={"h1"}
+                        className="  text-center  flex items-center  gap-3  sm:pl-0 font-bold "
+                      >
+                        Olive James{" "}
+                        <span>
+                          <VerifiedSvg />
+                        </span>
+                      </Typography>
                     </div>
-
-
                   </div>
-                  <div className=" text-center sm:text-left" >@OliveJamesMusic</div>
+                  <div className=" text-center sm:text-left">
+                    @OliveJamesMusic
+                  </div>
                   <p className=" pt-3 text-center  sm:text-left text-[1rem] sm:text-[20px] font-light leading-[23px]">
                     Multi platinum Record Producer <br />
                     .Drake, Kendrik Lamar, Joyner.
@@ -226,7 +287,9 @@ const Artist = () => {
               </div>
               <div className=" hidden mt-4  sm:block ">
                 <Button
-                  className={"ml-6  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-1 sm:py-3"}
+                  className={
+                    "ml-6  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-1 sm:py-3"
+                  }
                 >
                   Follow
                 </Button>
@@ -241,23 +304,33 @@ const Artist = () => {
             <div className=" flex items-center justify-center sm:justify-start flex-wrap gap-2 sm:gap-10 text-[14px] sm:text-[18px] mt-10">
               <div className=" flex items-center text-[#E6E6E6]  font-medium">
                 Following:
-                <span className="text-[#text-whit_100] ml-1 font-light">2,080</span>
+                <span className="text-[#text-whit_100] ml-1 font-light">
+                  2,080
+                </span>
               </div>
               <div className=" flex items-center text-[#E6E6E6]  font-medium">
                 Followers::
-                <span className="text-[#text-whit_100] ml-1 font-light">70.8k</span>
+                <span className="text-[#text-whit_100] ml-1 font-light">
+                  70.8k
+                </span>
               </div>
               <div className=" flex items-center text-[#E6E6E6]  font-medium">
                 Tracks:
-                <span className="text-[#text-whit_100] ml-1 font-light">186</span>
+                <span className="text-[#text-whit_100] ml-1 font-light">
+                  186
+                </span>
               </div>
               <div className=" flex items-center text-[#E6E6E6]  font-medium">
                 Plays:
-                <span className="text-[#text-whit_100] ml-1 font-light">865k</span>
+                <span className="text-[#text-whit_100] ml-1 font-light">
+                  865k
+                </span>
               </div>
               <div className=" flex items-center text-[#E6E6E6]  font-medium">
                 <FavoriteSvg />
-                <span className="text-[#text-whit_100] ml-1 font-light">269k</span>
+                <span className="text-[#text-whit_100] ml-1 font-light">
+                  269k
+                </span>
               </div>
               <div className=" flex items-center text-[#E6E6E6]  font-medium">
                 <More_vertSvg />
@@ -265,7 +338,9 @@ const Artist = () => {
             </div>
             <div className="flex mt-10 sm:hidden  ">
               <Button
-                className={"ml-6  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-1 sm:py-3"}
+                className={
+                  "ml-6  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-1 sm:py-3"
+                }
               >
                 Follow
               </Button>
@@ -278,7 +353,10 @@ const Artist = () => {
             </div>
             <div className=" mt-20">
               <div className=" flex justify-between">
-                <Typography variant={"h1"} className=" text-white_300 font-bold ">
+                <Typography
+                  variant={"h1"}
+                  className=" text-white_300 font-bold "
+                >
                   Olive’s Playlists
                 </Typography>
                 <div>
@@ -292,7 +370,6 @@ const Artist = () => {
               </div>
             </div>
           </div>
-
         </div>
 
         <div className="  mt-[62rem] sm:mt-[50rem] ">
@@ -303,11 +380,7 @@ const Artist = () => {
             <div>
               <span className="text-[15px] font-light  text-white_100">
                 Sort by:
-
               </span>
-
-
-
             </div>
           </div>
           <div className="  mt-20 text-white_300 px-2 sm:px-8   flex justify-between items-center">
@@ -321,11 +394,16 @@ const Artist = () => {
                 />
               </div>
               <div>
-                <Typography varient={"h4"} className=" font-bold smtext-base leading-[21px]">
+                <Typography
+                  varient={"h4"}
+                  className=" font-bold smtext-base leading-[21px]"
+                >
                   Pride Is A Devil
                 </Typography>
                 <div className=" flex items-center gap-3">
-                  <span className=" font-light text-[#text-whit_100]">J Cole</span>{" "}
+                  <span className=" font-light text-[#text-whit_100]">
+                    J Cole
+                  </span>{" "}
                   <span className=" w-2 h-2">
                     <NewRealse />
                   </span>
@@ -333,7 +411,7 @@ const Artist = () => {
               </div>
             </div>
             <div className="block sm:hidden">
-              < MdMoreVert className=" text-xl text-white_300" />
+              <MdMoreVert className=" text-xl text-white_300" />
             </div>
             <div className=" hidden  sm:flex gap-4 items-center">
               <div>
@@ -383,7 +461,9 @@ const Artist = () => {
                   Pride Is A Devil
                 </h4>
                 <div className=" flex items-center gap-3">
-                  <span className=" font-light text-[#text-whit_100]">J Cole</span>{" "}
+                  <span className=" font-light text-[#text-whit_100]">
+                    J Cole
+                  </span>{" "}
                   <span className=" w-2 h-2">
                     <NewRealse />
                   </span>
@@ -391,7 +471,7 @@ const Artist = () => {
               </div>
             </div>
             <div className="block sm:hidden">
-              < MdMoreVert className=" text-xl text-white_300" />
+              <MdMoreVert className=" text-xl text-white_300" />
             </div>
             <div className=" hidden sm:flex gap-4 items-center">
               <div>
@@ -426,7 +506,9 @@ const Artist = () => {
           </div>
           <div className=" mt-12   bg-black_100 py-4 sm:py-10 px-2 sm:px-8  rounded-[5px] text-white_300 flex justify-between items-center">
             <div className="flex items-center gap-10">
-              <div className="  hidden sm:block">< PlaySvg /></div>
+              <div className="  hidden sm:block">
+                <PlaySvg />
+              </div>
               <div className=" w-[50px] h-[50px] rounded-[4px]">
                 <Image
                   src={Picture}
@@ -439,7 +521,9 @@ const Artist = () => {
                   Pride Is A Devil
                 </h4>
                 <div className=" flex items-center gap-3">
-                  <span className=" font-light text-[#text-whit_100]">J Cole</span>{" "}
+                  <span className=" font-light text-[#text-whit_100]">
+                    J Cole
+                  </span>{" "}
                   <span className=" w-2 h-2">
                     <NewRealse />
                   </span>
@@ -447,7 +531,7 @@ const Artist = () => {
               </div>
             </div>
             <div className="block sm:hidden">
-              < MdMoreVert className=" text-xl text-white_300" />
+              <MdMoreVert className=" text-xl text-white_300" />
             </div>
             <div className=" hidden sm:flex gap-4 items-center">
               <div>
@@ -480,7 +564,6 @@ const Artist = () => {
               </div>
             </div>
           </div>
-
         </div>
         <div className=" mt-10">
           <Typography variant={"h1"} className=" text-white_300   capitalize">
@@ -513,73 +596,106 @@ const Artist = () => {
                 );
               })}
             </div>
-
           </div>
         </div>
-
-
       </div>
+
       <div className=" px-20 hidden    mt-10  sm:flex  justify-between items-center bg-black_100 py-3">
         <div className=" flex justify-between items-center gap-10">
-
-          <audio ref={audioRef} src={songs.url} controls={false} autoPlay={isPlaying} />
+          <audio
+            ref={audioRef}
+            src={songs.url}
+            controls={false}
+            autoPlay={isPlaying}
+          />
           <div>
-
-            < MdShuffle className=" text-white_300 text-[24px]" onClick={toggleShuffle} />
-
+            {isShuffle ? (
+              <button disabled={disable}>
+                <MdShuffleOn className=" text-white_300 text-[24px]" />
+              </button>
+            ) : (
+              <MdShuffle
+                className=" text-white_300 text-[24px]"
+                onClick={toggleShuffle}
+              />
+            )}
           </div>
           <div>
-
-            <   MdSkipPrevious className=" text-white_300 text-[24px]" />
-
+            <MdSkipPrevious
+              className=" text-white_300 text-[24px]"
+              onClick={handlePrev}
+            />
           </div>
           <div>
-            {
-              isPlaying ? < MdPause className=" text-white_300 text-[24px]" onClick={togglePlay} /> : < MdPlayArrow className=" text-white_300 text-[24px]" onClick={togglePlay} />
-            }
-
-
-
+            {isPlaying ? (
+              <MdPause
+                className=" text-white_300 text-[24px]"
+                onClick={togglePlay}
+              />
+            ) : (
+              <MdPlayArrow
+                className=" text-white_300 text-[24px]"
+                onClick={togglePlay}
+              />
+            )}
           </div>
 
           <div>
-
-            < MdSkipNext className=" text-white_300 text-[24px]" />
-
+            <MdSkipNext
+              className=" text-white_300 text-[24px]"
+              onClick={handleNex}
+            />
           </div>
           <div>
-
-            <  MdRepeat className=" text-white_300   text-[24px]" onClick={toggleRepeat} />
-
+            {isRepeat ? (
+              <MdRepeatOne
+                className=" text-white_300   text-[24px]"
+                onClick={toggleRepeat}
+              />
+            ) : (
+              <MdRepeat
+                className=" text-white_300   text-[24px]"
+                onClick={toggleRepeat}
+              />
+            )}
           </div>
-          <div>
-            <AudioWave />
+          <div className="w-80">
+            <Wavesurfer
+              audioFile={songs.url}
+              pos={pos}
+              onPosChange={handlePosChange}
+              playing={playing}
+              options={waveOptions}
+            />
           </div>
           <div className="flex items-center">
-            <div>   <label for="range" className="font-bold  text-white_300"><MdVolumeUp className=" text-[30px]" /></label></div>
             <div>
-              <input type="range"
+              {" "}
+              <label for="range" className="font-bold  text-white_300">
+                {volume === 0 ? (
+                  <MdVolumeOff className="text-[30px]" />
+                ) : (
+                  <MdVolumeUp className=" text-[30px]" />
+                )}
+              </label>
+            </div>
+            <div>
+              <input
+                type="range"
                 min="0"
                 max="1"
                 step="0.01"
                 value={volume}
-                onChange={handleVolumeChange} classNameS="w-full rounded-lg h-2 bg-white_300 appearance-none" />
+                onChange={handleVolumeChange}
+                classNameS="w-full rounded-lg h-2 bg-white_300 appearance-none"
+              />
             </div>
           </div>
 
-          <div>
-
-          </div>
-          <div>
-
-
-
-          </div>
-
-
+          <div></div>
+          <div></div>
         </div>
         <div>
-
           <div>
             <ul className=" flex items-center  gap-5">
               <li>
@@ -603,10 +719,7 @@ const Artist = () => {
           </div>
         </div>
       </div>
-
-
     </div>
-
   );
 };
 

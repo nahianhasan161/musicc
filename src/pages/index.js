@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { songsdata } from '@/datalist/audio';
+import React, { useState, useRef, useEffect } from "react";
+import { songsdata } from "@/datalist/audio";
 
 const MusicPlayer = () => {
   const audioRef = useRef(null);
@@ -11,12 +11,10 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current.play()
+      audioRef.current.play();
     } else {
-
-      audioRef.current.pause()
+      audioRef.current.pause();
     }
-
   }, [isPlaying]);
 
   const togglePlay = () => {
@@ -38,11 +36,15 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className='bg-red-200'>
-
-      <button onClick={togglePlay}>{isPlaying ? 'Pause' : 'Play'}</button>
-      <button onClick={toggleShuffle}>{isShuffle ? 'Disable Shuffle' : 'Enable Shuffle'}</button>
-      <button onClick={toggleRepeat}>{isRepeat ? 'Disable Repeat' : 'Enable Repeat'}</button>
+    <div className="bg-red-200">
+      <audio src={songsdata[0]} />
+      <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button>
+      <button onClick={toggleShuffle}>
+        {isShuffle ? "Disable Shuffle" : "Enable Shuffle"}
+      </button>
+      <button onClick={toggleRepeat}>
+        {isRepeat ? "Disable Repeat" : "Enable Repeat"}
+      </button>
       <input
         type="range"
         min="0"
