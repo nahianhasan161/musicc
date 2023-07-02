@@ -30,7 +30,7 @@ const element = [
 const SideBar = () => {
   return (
     <div className=" ">
-      <ul className=" flex flex-wrap text-white_300">
+      <ul className=" flex flex-col text-white_300">
         {element.map((item, i) => {
           return (
             <li

@@ -11,7 +11,7 @@ import { MdDehaze, MdSearch } from "react-icons/md";
 
 const NavMenu = () => {
   return (
-    <div className=" border-b-[1px]  border-border_color   bg-black">
+    <div className=" border-b-[1px]  border-border_color   bg-black px-10">
       <div className=" px-5 sm:px-0 container mx-auto">
         {/* mobile menu */}
         <div className="  flex items-center py-8 justify-between sm:hidden">
