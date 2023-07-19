@@ -16,6 +16,8 @@ const HomeHero = () => {
           <Heading text="WE" fontWeight="font-bold" />
           <Heading text="ARE" fontWeight="font-bold" />
           <Heading text2="LOWFIED" fontWeight="font-bold" />
+          <p className="text-[#c3c3c3] text-light text-lg mt-[-15px] mb-3">India&quot;s #1 Marketplace to By and Sell Beats</p>
+
            <div className="w-80">
           <SearchHome />
         </div>
@@ -34,7 +36,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 text-transform: uppercase; */}
-           <div className="text-[20px] font-bold uppercase text-white space-y-8">
+           <div className="text-[20px] font-bold uppercase text-white flex flex-col gap-12">
             <div className="flex gap-3 items-center justify-between  text-[20px] pr-10 ">
 
            <Button
@@ -62,6 +64,9 @@ text-transform: uppercase; */}
             <p className="font-light text-[#C3C3C3] text-base">And a catalogue of over 1000+ beats which updates, daily!</p>
             </div>
            </div>
+         
+                <div>
+
            <Link href={"/tracks"} className="cursor-pointer">
                 <Button
                 className={
@@ -70,7 +75,9 @@ text-transform: uppercase; */}
                 >
                 Explore 
                 </Button>
+                  
                 </Link>
+                  </div>
                 </div>
         </div> 
        {/*  <section>
