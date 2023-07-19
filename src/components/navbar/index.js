@@ -8,10 +8,14 @@ import { SearchSvg } from "@/svgicon";
 import { MdDehaze, MdSearch } from "react-icons/md";
 import Link from "next/link";
 import HomeSection from "@/pages/home";
+import {BiSearchAlt2} from "react-icons/bi"
 
+import Item from "./utilities/item";
+import Searchbar from "./utilities/searchbar";
+import { Button } from "../button";
 const NavMenu = () => {
   const { data: session } = useSession();
-
+  const gmailHandler = "@" + session?.user?.email.slice(0, session?.user?.email.indexOf("@"))
   function handleSignOut() {
     signOut();
   }
@@ -49,34 +53,40 @@ const NavMenu = () => {
         {/* desktop menu */}
         <div className="hidden sm:flex py-4 justify-between text-[16px] items-center">
           
-       
+      
           <div className="sm:flex hidden">
             <ul className="flex gap-16 text-white capitalize items-center">
             <Link href={"/home"} className="cursor-pointer"> <li>
                 <Image src={Logo} height={55} width={55} alt="logo" />
               </li> </Link>
-              <Link href={"/tracks"} className="cursor-pointer"><li>tracks</li> </Link>
-              <Link href={"/pricing"} className="cursor-pointer"><li>pricing</li> </Link>
-              <Link href={"/blog"} className="cursor-pointer"> <li>Blogs</li> </Link>
+              <Link href={"/tracks"} className="cursor-pointer"> <Item title="tracks"/> </Link>
+              <Link href={"/tracks"} className="cursor-pointer"> <Item title="pricing"/> </Link>
+              <Link href={"/tracks"} className="cursor-pointer"> <Item title="blog"/> </Link>
+              
             </ul>
           </div>
           <div>
             <ul className="p-0 flex text-white items-center gap-5">
               <li>{/* <SearchSvg /> */}</li>
               <li>
-                <Image src={SearchIcon} height={18} width={18} />
+              <Searchbar /> 
+          
+                {/* <Image src={SearchIcon} height={18} width={18} /> */}
               </li>
               {session ? (
                 <>
                   <li
                     onClick={handleSignOut}
-                    className="border-l-[1px] py-0 border-white pl-4 cursor-pointer"
+                    className="border-l-[1px] py-0 border-white pl-4 text-base cursor-pointer font-light italic whitespace-nowrap hover:border-none hover:scale-110  duration-200 ease-in "
                   >
                     SIGN OUT
                   </li>
                   <Link href={"/seller"}>
-                  <li className="text-yellow cursor-pointer">
+                  {/* <li className="text-yellow cursor-pointer p-3 bg-[#272727] rounded whitespace-nowrap ">
                     Start Selling
+                  </li> */}
+                  <li >
+                    <Button variant="secondary" className={"p-3"}>Start Seliing</Button>
                   </li>
                   </Link>
                   <Link href={"/"}>
@@ -88,12 +98,15 @@ const NavMenu = () => {
                           width={40}
                           height={40}
                           className="object-cover w-full rounded-full"
+                          alt="userImg"
                         />
                       </div>
                       <div>
-                        <p>{session.user.name}</p>
-                        <p className="truncate" title={session.user.email}>
-                          {session.user.email}
+                
+                        <p className="text-base font-semibold italic">{session.user.name}</p>
+                        <p className="truncate text-[#D8EB55] text-sm font-semibold italic" title={session.user.email}>
+                         {/*  {session.user.email} */}
+                         {gmailHandler}
                         </p>
                       </div>
                     </div>
@@ -107,7 +120,7 @@ const NavMenu = () => {
                 </>
               ) : (
                 <Link href={"/login"}>
-                <li className="cursor-pointer">SIGN IN</li>
+                <li className="cursor-pointer  text-base font-light italic whitespace-nowrap hover:scale-110  duration-200 ease-in">SIGN IN</li>
                 </Link>
               )}
             </ul>

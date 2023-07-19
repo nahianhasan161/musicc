@@ -40,7 +40,23 @@ export default NextAuth({
         return result;
       },
     }),
+    
   ],
+  
+  callbacks: {
+    async signIn(user, account, profile) {
+      // Redirect to /home after successful login
+    /*   if (account.provider === "google") {
+        user.name = profile.name;
+        user.email = profile.email;
+        
+      } */
+      console.log(user)
+      console.log(profile)
+      console.log(account)
+      return true;
+    },
+  },
 });
 
 // export default {

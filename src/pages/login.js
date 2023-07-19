@@ -36,7 +36,7 @@ export default function Login() {
 
   // Google Handler function
   async function handleGoogleSignin() {
-    signIn("google", { callbackUrl: "http://localhost:3000" });
+    signIn('google', { callbackUrl: 'http://localhost:3000/home' })
   }
 
   return (
