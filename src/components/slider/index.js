@@ -33,7 +33,7 @@ export default function Slider({ playlist }) {
           return (
             <>
             <Link href={"/single-track-page"} className="cursor-pointer">
-              <div className=" sm:h-[260px] sm:w-[259px]">
+              <div className=" sm:h-[260px] sm:w-[259px] transition-all  hover:scale-110  duration-200 ease-in ">
                 {" "}
                 <Link href={"/artist"}>
                 <Image

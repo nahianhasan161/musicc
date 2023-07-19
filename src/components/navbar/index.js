@@ -56,7 +56,7 @@ const NavMenu = () => {
       
           <div className="sm:flex hidden">
             <ul className="flex gap-16 text-white capitalize items-center">
-            <Link href={"/home"} className="cursor-pointer"> <li>
+            <Link href={"/home"} className="cursor-pointer"> <li className="transition-all  hover:scale-110  duration-200 ease-in ">
                 <Image src={Logo} height={55} width={55} alt="logo" />
               </li> </Link>
               <Link href={"/tracks"} className="cursor-pointer"> <Item title="tracks"/> </Link>
@@ -89,22 +89,22 @@ const NavMenu = () => {
                     <Button variant="secondary" className={"p-3"}>Start Seliing</Button>
                   </li>
                   </Link>
-                  <Link href={"/"}>
-                  <li className="pl-4 cursor-pointer">
+                  <Link href={"/"} className="cursor-pointer">
+                  <li className="pl-4 transition-all  hover:scale-110  duration-200 ease-in ">
                     <div className="flex items-center gap-4 rounded-full">
                       <div>
-                        <Image
+                        {session.user.image &&  (<Image
                           src={session.user.image}
                           width={40}
                           height={40}
                           className="object-cover w-full rounded-full"
                           alt="userImg"
-                        />
+                        />)}
                       </div>
                       <div>
                 
                         <p className="text-base font-semibold italic">{session.user.name}</p>
-                        <p className="truncate text-[#D8EB55] text-sm font-semibold italic" title={session.user.email}>
+                        <p className="truncate text-[#D8EB55] text-sm font-semibold italic p-1" title={session.user.email}>
                          {/*  {session.user.email} */}
                          {gmailHandler}
                         </p>
@@ -113,14 +113,14 @@ const NavMenu = () => {
                   </li>
                   </Link>
                   <li className="border-l-[1px] border-border_color pl-3 text-yellow cursor-pointer">
-                    <div className="w-[48px] flex justify-center items-center h-[25px] bg-yellow rounded-[23px]">
+                    <div className="w-[48px] flex justify-center items-center h-[25px] bg-yellow rounded-[23px] transition-scale duration-200 ease-in hover:scale-110">
                       <Image src={C1} alt="cart" />
                     </div>
                   </li>
                 </>
               ) : (
                 <Link href={"/login"}>
-                <li className="cursor-pointer  text-base font-light italic whitespace-nowrap hover:scale-110  duration-200 ease-in">SIGN IN</li>
+                <li className="cursor-pointer  text-base font-light italic whitespace-nowrap transition-all  hover:scale-110  duration-200 ease-in ">SIGN IN</li>
                 </Link>
               )}
             </ul>

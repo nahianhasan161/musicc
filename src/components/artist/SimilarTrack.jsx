@@ -53,7 +53,7 @@ const SimilarTrack = () => {
       <div className=" grid  sm:grid-cols-6 gap-10">
         {smililarTrack.map((track, i) => {
           return (
-            <div className="w-full h-[280px]" key={i}>
+            <div className="w-full h-[280px] transition-all  duration-200 ease-in hover:scale-105" key={i}>
               <div className="  bg-slate-950 rounded-tl-[5px] rounded-tr-[5px] overflow-hidden  w-full sm:h-[208px] h-[240px]">
                 <Image
                   src={track.image}

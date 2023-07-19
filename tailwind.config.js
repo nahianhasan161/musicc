@@ -12,7 +12,9 @@ module.exports = {
         white_100: "#adadad",
         bt_color: "#272727",
       },
+      transitionProperty: { 'scale': 'scale' } 
     },
   },
   plugins: [],
+  
 };

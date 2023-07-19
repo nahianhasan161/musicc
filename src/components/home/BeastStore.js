@@ -136,7 +136,7 @@ const BeastStore = () => {
                 key={i}
                 className="sm:w-[208px] sm:h-[208px] rounded-3xl w-[143px] h-[143px]"
               >
-                <div className="flex  flex-col justify-center items-center">
+                <div className="flex  flex-col justify-center items-center transition-all  hover:scale-110  duration-200 ease-in ">
                 <Link href={"/artist"}>
                   <Image
                     src={song.image}

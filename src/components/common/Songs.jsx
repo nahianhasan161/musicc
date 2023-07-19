@@ -25,7 +25,7 @@ const Songs = () => {
 
       {/* for mobile  */}
 
-      <div className="sm:hidden flex justify-between item-center ">
+      <div className="sm:hidden flex justify-between item-center transition-all  duration-200 ease-in">
         <div>
           <MdTune className=" text-white_300 text-2xl" />
         </div>
@@ -35,23 +35,22 @@ const Songs = () => {
           </span>
         </div>
       </div>
-      <div className="  mt-20 text-white_300 px-2 sm:px-8   flex justify-between items-center">
+            <Link href={"/artist"} className="cursor-pointer ">
+      <div className="  mt-20 text-white_300 px-2 sm:px-8   flex justify-between items-center p-3  hover:ring hover:scale-105 ">
         <div className="flex  items-center justify-between gap-4 sm:gap-10">
           <div className="text-[18px] hidden sm:block font-semibold">1</div>
           <div className=" w-[50px] h-[50px] rounded-[4px]">
-            <Link href={"/artist"}>
             <Image
               src={Picture}
               className=" object-cover w-full h-full"
               alt="pic"
             />
-            </Link>
           </div>
           <div>
             <Typography
               varient={"h4"}
               className=" font-bold smtext-base leading-[21px]"
-            >
+              >
               Pride Is A Devil
             </Typography>
             <div className=" flex items-center gap-3">
@@ -62,6 +61,7 @@ const Songs = () => {
             </div>
           </div>
         </div>
+              
         <div className="block sm:hidden">
           <MdMoreVert className=" text-xl text-white_300" />
         </div>
@@ -97,7 +97,8 @@ const Songs = () => {
           </div>
         </div>
       </div>
-      <div className="mt-8 text-white_300 px-2 sm:px-8 flex justify-between items-center">
+      </Link>
+      <div className="mt-8 text-white_300 px-2 sm:px-8 flex justify-between items-center p-3 hover:ring hover:scale-105 ">
         <div className="flex  items-center justify-between gap-4 sm:gap-10">
           <div className="text-[18px] hidden sm:block font-semibold">2</div>
           <Link href={"/artist"}>

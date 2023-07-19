@@ -53,9 +53,9 @@ const LatestUpload = () => {
       <div className=" grid  sm:grid-cols-6 gap-10">
         {latestUpload.map((track, i) => {
           return (
-            <div className="w-full h-[280px]" key={i}>
-               <Link href={"/single-track-page"} className="cursor-pointer">
-              <div className="  bg-slate-950 rounded-tl-[5px] rounded-tr-[5px] overflow-hidden  w-full sm:h-[208px] h-[240px]">
+            <div className="w-full h-[280px] transition-all  hover:scale-110  duration-200 ease-in " key={i}>
+               <Link href={"/single-track-page"} className="cursor-pointer ">
+              <div className="  bg-slate-950 rounded-tl-[5px] rounded-tr-[5px] overflow-hidden  w-full sm:h-[208px] h-[240px] ">
                 <Image
                   src={track.image}
                   height={200}
