@@ -11,7 +11,7 @@ const Seller = () => {
   return (
     <div className=" pt-20 container mx-auto">
       <Layout>
-        <div className=" px-4 py-6">
+        <div className=" px-4 py-6 bg-black_100">
           <div>
             <h5 className=" text-[20px] font-semibold text-white_300  leading-[50%]">
               Your Licenses

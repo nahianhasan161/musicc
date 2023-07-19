@@ -6,6 +6,7 @@ import SongImage from "../../../public/assests/image 6.png";
 import Image from "next/image";
 import { Heading } from "../heading/Heading";
 import { Button } from "../button";
+import Link from "next/link";
 
 const LevelUp = () => {
   return (
@@ -38,6 +39,7 @@ const LevelUp = () => {
        
             </div>
             <div className="sm:mx-0  mb-10">
+            <Link href={"/seller"}>
               <Button
                 className={
                   " italic rounded-full  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-3 sm:py-3"
@@ -45,6 +47,7 @@ const LevelUp = () => {
               >
                 START SELLING
               </Button>
+              </Link>
             </div>
           </div>
           <Image
@@ -87,6 +90,7 @@ const LevelUp = () => {
               </Typography>
             </div>
             <div className="sm:mx-0 ">
+            <Link href={"/tracks"}>
               <Button
                 className={
                   "italic rounded-full  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-3 sm:py-3"
@@ -94,6 +98,7 @@ const LevelUp = () => {
               >
                 EXPLORE
               </Button>
+              </Link>
             </div>
           </div>
         </div>

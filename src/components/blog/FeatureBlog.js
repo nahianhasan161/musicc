@@ -3,6 +3,7 @@ import Typography from "../typography";
 import feature_blog from "../../../public/assests/feature_blog.png";
 import calender from "../../../public/assests/icon/calender.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const FeatureBlog = () => {
   return (
@@ -15,20 +16,22 @@ const FeatureBlog = () => {
           >
             Feature Upload
           </Typography>
+          
           <div className="lg:w-1/2 w-full  lg:py-6 mt-6 lg:mt-0 flex flex-col  justify-center items-start gap-6">
+            <Link href={"/singleblog"}>
             <p className="mb-8 md:text-5xl text-2xl font-bold text-start text-white">
               I Created a Rap Video - Here's What I Learned from it. Check it
               out
             </p>
-
+            </Link>
 
             <div className="flex justify-center items-center flex-row  gap-4">
-              <a href="#">
+            <Link href={"/singleblog"}>
                 <img
                   src="https://picsum.photos/seed/1/40/40"
                   className="rounded-full max-h-10 max-w-10"
                 />
-              </a>
+              </Link>
 
               <div className="flex flex-col justify-center items">
                 <a href="#">

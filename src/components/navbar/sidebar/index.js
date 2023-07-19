@@ -1,5 +1,6 @@
 import React from "react";
 import { Dashboard, Content, Sale, Licensed, Setting, Logout } from "@/svgicon";
+import Link from "next/link";
 
 const element = [
   {
@@ -34,12 +35,14 @@ const SideBar = () => {
       <ul className="flex md:flex-col flex-row text-white_300 sm:gap-0 gap-4">
         {element.map((item, i) => {
           return (
+            <Link href={"/userdashboard"} key={i}>
             <li
               key={i}
               className="capitalize flex text-[16px] font-semibold items-center gap-2 sm:mb-10"
             >
               <span>{item.icon}</span> {item.name}
             </li>
+            </Link>
           );
         })}
       </ul>

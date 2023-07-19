@@ -5,6 +5,7 @@ import Image from "next/image";
 import Typography from "../typography";
 import { Heading } from "../heading/Heading";
 import { Button } from "../button";
+import Link from "next/link";
 
 const BeastStore = () => {
   const playlist = [
@@ -136,10 +137,12 @@ const BeastStore = () => {
                 className="sm:w-[208px] sm:h-[208px] rounded-3xl w-[143px] h-[143px]"
               >
                 <div className="flex  flex-col justify-center items-center">
+                <Link href={"/artist"}>
                   <Image
                     src={song.image}
                     className="  "
                   />
+                  </Link>
                    <div className="text-white_300">
                   <h2>{song.title}</h2>
                   <div className=" items-center gap-2">

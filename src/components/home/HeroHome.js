@@ -6,6 +6,7 @@ import downIcon from "/src/svgicon/keyboard_arrow_down.svg"
 import { Button } from "../button";
 
 import {FaArrowDown} from "react-icons/fa"
+import Link from "next/link";
 const HomeHero = () => {
   return (
     <section className="bg-black ml-2">
@@ -61,13 +62,7 @@ text-transform: uppercase; */}
             <p className="font-light text-[#C3C3C3] text-base">And a catalogue of over 1000+ beats which updates, daily!</p>
             </div>
            </div>
-           {/* color: #1C1C1C;
-font-family: AmsiProNarw-SemiBoldItalic;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-transform: uppercase; */}
+           <Link href={"/tracks"} className="cursor-pointer">
                 <Button
                 className={
                   " italic rounded-full w-full  font-semibold text-[20px]  sm:text-[24px] px-4  sm:px-8  py-3 sm:py-3 flex items-center gap-5 justify-center"
@@ -75,6 +70,7 @@ text-transform: uppercase; */}
                 >
                 Explore 
                 </Button>
+                </Link>
                 </div>
         </div> 
        {/*  <section>

@@ -13,6 +13,7 @@ import { FiChevronDown } from "react-icons/fi";
 import Picture from "../../../public/assests/image 12.png";
 import Typography from "../typography";
 import Sorting from "./Sorting";
+import Link from "next/link";
 
 const Songs = () => {
   return (
@@ -38,11 +39,13 @@ const Songs = () => {
         <div className="flex  items-center justify-between gap-4 sm:gap-10">
           <div className="text-[18px] hidden sm:block font-semibold">1</div>
           <div className=" w-[50px] h-[50px] rounded-[4px]">
+            <Link href={"/artist"}>
             <Image
               src={Picture}
               className=" object-cover w-full h-full"
               alt="pic"
             />
+            </Link>
           </div>
           <div>
             <Typography
@@ -97,6 +100,7 @@ const Songs = () => {
       <div className="mt-8 text-white_300 px-2 sm:px-8 flex justify-between items-center">
         <div className="flex  items-center justify-between gap-4 sm:gap-10">
           <div className="text-[18px] hidden sm:block font-semibold">2</div>
+          <Link href={"/artist"}>
           <div className=" w-[50px] h-[50px] rounded-[4px]">
             <Image
               src={Picture}
@@ -104,6 +108,7 @@ const Songs = () => {
               alt="pic"
             />
           </div>
+          </Link>
           <div>
             <Typography
               varient={"h4"}
@@ -159,6 +164,7 @@ const Songs = () => {
               <div className=" hidden sm:block">
                 <PlaySvg />
               </div>
+              <Link href={"/artist"}>
               <div className=" w-[50px] h-[50px] rounded-[4px]">
                 <Image
                   src={Picture}
@@ -166,6 +172,7 @@ const Songs = () => {
                   alt=""
                 />
               </div>
+              </Link>
               <div>
                 <h4 className=" font-bold text-base leading-[21px]">
                   Pride Is A Devil

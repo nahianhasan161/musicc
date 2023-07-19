@@ -16,7 +16,7 @@ const LayOut = ({ children }) => {
           <SideBar />
         </div>
       </div>
-      <div className="basis-[80%] bg-black_100">{children}</div>
+      <div className="basis-[80%] ">{children}</div> {/* bg-black-100 */}
     </div>
   );
 };

@@ -49,9 +49,9 @@ const UserDashboard = () => {
   return (
     <div className="pt-20 container mx-auto ">{/*  md:bg-rose-900 sm:bg-lime-500 */}
       <Layout>
-        <div className="px-4 py-6 w-fit">
-          <div className="grid lg:grid-cols-2 grid-cols-1">
-            <div className="px-3 py-5 rounded-[5px]">
+        
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 ">
+            <div className="px-3 py-10 rounded-[5px] shadow-lg bg-black_100">
               <div className="mb-10">
                 <h5 className="text-[20px] font-semibold text-white_300 leading-[50%]">
                   User Details
@@ -151,7 +151,7 @@ const UserDashboard = () => {
               </div>
             </div>
 
-            <div className="px-3 py-5 rounded-[5px]">
+            <div className="px-3 py-10 rounded-[5px] shadow-lg bg-black_100">
               <div className="mb-10">
                 <h5 className="text-[20px] font-semibold text-white_300 leading-[50%]">
                   Your Billing
@@ -182,8 +182,8 @@ const UserDashboard = () => {
                   />
                 </div>
 
-                <div className="mt-grid gap-2 sm:grid-cols-2">
-                <div className={`${styles.input_group} my-3`}>
+                <div className="mt-grid gap-2 sm:grid-cols-2 flex">
+                <div className={`${styles.input_group} my-3 basis-1/2`}>
                     {/* State */}
                     <InputField
                       className="py-4 "
@@ -192,7 +192,7 @@ const UserDashboard = () => {
                       onChange={formik.handleChange}
                     />
                   </div>
-                  <div className={`${styles.input_group} my-3`}>
+                  <div className={`${styles.input_group} my-3 basis-1/2`}>
                     {/* Pincode */}
                     <InputField
                       className="py-4 "
@@ -205,7 +205,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-        </div>
+        
       </Layout>
     </div>
   );

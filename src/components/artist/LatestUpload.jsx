@@ -3,6 +3,7 @@ import Typography from '../typography';
 import Image from 'next/image';
 import { More_vertSvg, NewRealse } from '@/svgicon';
 import SongImage from "../../../public/assests/image 6.png";
+import Link from 'next/link';
 
 const LatestUpload = () => {
   const latestUpload = [
@@ -53,6 +54,7 @@ const LatestUpload = () => {
         {latestUpload.map((track, i) => {
           return (
             <div className="w-full h-[280px]" key={i}>
+               <Link href={"/single-track-page"} className="cursor-pointer">
               <div className="  bg-slate-950 rounded-tl-[5px] rounded-tr-[5px] overflow-hidden  w-full sm:h-[208px] h-[240px]">
                 <Image
                   src={track.image}
@@ -62,6 +64,7 @@ const LatestUpload = () => {
                   alt="track"
                 />
               </div>
+              </Link>
               <div className="  flex justify-between items-center  text-white_300  rounded-bl-[5px] px-2 py-3 rounded-br-[5px] bg-[#2F2F2F]">
                 <div>
                   <h4 className=" font-bold">{track.title}</h4>

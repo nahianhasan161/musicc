@@ -4,7 +4,7 @@ import Image from "next/image";
 import Typography from "../typography";
 import calender from "../../../public/assests/icon/calender.png";
 import { KeyDownvertSvg } from "@/svgicon";
-
+import Link from "next/link";
 const BlogCard = () => {
   return (
     <>
@@ -21,9 +21,9 @@ const BlogCard = () => {
       <div className=" grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 bg-gray-900 sm:mx-10 mx-4 gap-6">
         <card className="w-full flex flex-col">
           <div className="relative">
-            <a href="#">
+            <Link href="/singleblog">
               <Image src={feature_blog} className="h-auto" />
-            </a>
+            </Link>
 
             <Typography
               variant={"h3"}

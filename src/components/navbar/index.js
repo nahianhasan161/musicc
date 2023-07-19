@@ -17,12 +17,13 @@ const NavMenu = () => {
   }
 
   return (
-    <div className="border-b-[1px] border-border_color bg-black sm:px-10">
+    <div className="border-b-[1px] border-border_color bg-black sm:px-10 min-w-[40rem]">
       <div className="px-5 sm:px-0 container mx-auto">
         {/* mobile menu */}
         <div className="flex items-center py-8 justify-between sm:hidden">
           <div>
             <div className="w-[44px] h-[44px]">
+              <Link href={"/home"} className="cursor-pointer">
               <Image
                 src={Logo}
                 height={60}
@@ -30,6 +31,7 @@ const NavMenu = () => {
                 className="w-full h-full"
                 alt="logo"
               />
+              </Link>
             </div>
             <div></div>
           </div>
@@ -50,12 +52,12 @@ const NavMenu = () => {
        
           <div className="sm:flex hidden">
             <ul className="flex gap-16 text-white capitalize items-center">
-              <li>
+            <Link href={"/home"} className="cursor-pointer"> <li>
                 <Image src={Logo} height={55} width={55} alt="logo" />
-              </li>
-              <li>tracks</li>
-              <li>pricing</li>
-              <li>Blogs</li>
+              </li> </Link>
+              <Link href={"/tracks"} className="cursor-pointer"><li>tracks</li> </Link>
+              <Link href={"/pricing"} className="cursor-pointer"><li>pricing</li> </Link>
+              <Link href={"/blog"} className="cursor-pointer"> <li>Blogs</li> </Link>
             </ul>
           </div>
           <div>
@@ -72,9 +74,12 @@ const NavMenu = () => {
                   >
                     SIGN OUT
                   </li>
+                  <Link href={"/seller"}>
                   <li className="text-yellow cursor-pointer">
                     Start Selling
                   </li>
+                  </Link>
+                  <Link href={"/"}>
                   <li className="pl-4 cursor-pointer">
                     <div className="flex items-center gap-4 rounded-full">
                       <div>
@@ -93,6 +98,7 @@ const NavMenu = () => {
                       </div>
                     </div>
                   </li>
+                  </Link>
                   <li className="border-l-[1px] border-border_color pl-3 text-yellow cursor-pointer">
                     <div className="w-[48px] flex justify-center items-center h-[25px] bg-yellow rounded-[23px]">
                       <Image src={C1} alt="cart" />
@@ -100,7 +106,9 @@ const NavMenu = () => {
                   </li>
                 </>
               ) : (
+                <Link href={"/login"}>
                 <li className="cursor-pointer">SIGN IN</li>
+                </Link>
               )}
             </ul>
           </div>

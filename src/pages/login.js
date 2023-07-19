@@ -80,6 +80,7 @@ export default function Login() {
             producers, all in one place.
           </Typography>
 
+          <Link href={"/register"} className="cursor-pointer">
           <Button
             className={
               "  font-semibold text-[20px]  sm:text-[20px] px-8  sm:px-12  py-1 sm:py-2"
@@ -87,6 +88,7 @@ export default function Login() {
           >
             Get Started
           </Button>
+          </Link>
         </div>
         <div className="">
           <form className="flex  flex-col gap-5" onSubmit={formik.handleSubmit}>
