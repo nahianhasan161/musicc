@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply bg-black;
+    font-family: AmsiProNarw; 
+  }
+}
+
+
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiProNarw; 
+
+  src: url('../../fonts/AmsiPro-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+@font-face {
+  /* font-family: "Rubik"; */
+  src: url('../../fonts/AmsiPro-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+  
+@font-face {
+  /* font-family: "Rubik"; */
+  src: url('../../fonts/AmsiProNarw-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
