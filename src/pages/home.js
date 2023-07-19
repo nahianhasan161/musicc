@@ -7,6 +7,7 @@ import React from 'react'
 
 const HomeSection = () => {
   return (
+    /* min screen */
     <div className='min-w-fit'>
    <HomeHero/>
    <BeastStore/>
