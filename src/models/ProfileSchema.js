@@ -16,8 +16,8 @@ const Profile = mongoose.models.Profile
           type: String,
           required: true,
         },
-        displayName: {
-          type: String,
+        mobileNumber: {
+          type: Number,
           required: true,
         },
         email: {

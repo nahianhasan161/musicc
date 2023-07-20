@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Form data is missing" });
     }
 
-    const { username, firstName, lastName, displayName, email, country, state, address, city, pincode } = req.body;
+    const { username, firstName, lastName, mobileNumber, email, country, state, address, city, pincode } = req.body;
 
     // Check if a profile with the same email already exists
     const existingProfile = await Profile.findOne({ email });
@@ -28,7 +28,7 @@ export default async function handler(req, res) {
       username,
       firstName,
       lastName,
-      displayName,
+      mobileNumber,
       email,
       country,
       state,

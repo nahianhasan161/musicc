@@ -15,7 +15,7 @@ const UserDashboard = () => {
       lastName: "",
       email: "",
       country: "",
-      displayName: "",
+      mobileNumber: "",
       state: "",
       address: "",
       city: "",
@@ -84,13 +84,16 @@ const UserDashboard = () => {
                       />
                     </div>
                   </div>
-                  <div className={`${styles.input_group} my-3`}>
-                    {/* Display/Stage Name */}
-                    <InputField
+                
+                  
+                    {/* New input for Username */}
+                    <div className={`${styles.input_group} mt-3`}>
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Username"
                       className={`${styles.input_text}`}
-                      placeholder="Display/Stage Name"
-                      name="displayName"
-                      onChange={formik.handleChange}
+                      {...formik.getFieldProps("username")}
                     />
                   </div>
 
@@ -104,16 +107,18 @@ const UserDashboard = () => {
                     />
                   </div>
 
-                    {/* New input for Username */}
-                    <div className={`${styles.input_group} mt-3`}>
-                    <input
-                      type="text"
-                      name="username"
-                      placeholder="Username"
+                  <div className={`${styles.input_group} my-3`}>
+                    {/* Mobile Number */}
+                    <InputField
+                      type="tel"
+                      pattern="[0-9]{3}-[0-9]{2}-[0-9]"
                       className={`${styles.input_text}`}
-                      {...formik.getFieldProps("username")}
+                      placeholder="Mobile Number"
+                      name="mobileName"
+                      onChange={formik.handleChange}
                     />
                   </div>
+                  
 
                   <div className="mt-grid gap-2 sm:grid-cols-2 md:flex">
                     <div className={`${styles.input_group} my-3 basis-1/2`}>
