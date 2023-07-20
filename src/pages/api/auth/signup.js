@@ -2,7 +2,7 @@ import connectDB from '@/lib/db';
 import Users from '@/models/Users';
 import { hash } from 'bcryptjs';
 // Assuming your import statements are correct and you have the necessary modules and models.
-
+import { SendEmail } from '@/helper/mailer';
 export default async function handler(req, res) {
     try {
       await connectDB(); // Assuming this function connects to the MongoDB database.
@@ -28,7 +28,11 @@ export default async function handler(req, res) {
   
       // Create the new user
       const newUser = await Users.create({ username, email, password: hashedPassword });
-  
+      
+      //send Verify Email
+     const mail = await SendEmail({email,userId: newUser._id});
+      console.log("mail send")
+      console.log(mail)
       // Respond with the user object
       res.status(201).json({ status: true, user: newUser });
     } catch (error) {

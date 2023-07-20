@@ -64,20 +64,20 @@ const UserDashboard = () => {
               </div>
               <div className="">
                 <form onSubmit={formik.handleSubmit}>
-                  <div className="mt-grid gap-2 sm:grid-cols-2">
-                    <div className={styles.input_group}>
+                  <div className="mt-grid gap-2 sm:grid-cols-2 md:flex">
+                    <div className={`${styles.input_group} basis-1/2`}>
                       {/* First Name */}
                       <InputField
-                        className="py-4 "
+                        className={`${styles.input_text} `}
                         placeholder="First Name"
                         name="firstName"
                         onChange={formik.handleChange}
                       />
                     </div>
-                    <div className={`${styles.input_group} my-3`}>
+                    <div className={`${styles.input_group}  mt-3 md:mt-0  basis-1/2`}>
                       {/* Last Name */}
                       <InputField
-                        className="py-4"
+                        className={`${styles.input_text}`}
                         placeholder="Last Name"
                         name="lastName"
                         onChange={formik.handleChange}
@@ -87,7 +87,7 @@ const UserDashboard = () => {
                   <div className={`${styles.input_group} my-3`}>
                     {/* Display/Stage Name */}
                     <InputField
-                      className="py-4 "
+                      className={`${styles.input_text}`}
                       placeholder="Display/Stage Name"
                       name="displayName"
                       onChange={formik.handleChange}
@@ -97,27 +97,38 @@ const UserDashboard = () => {
                   <div className={`${styles.input_group} my-3`}>
                     {/* Email ID */}
                     <InputField
-                      className="py-4 "
+                      className={`${styles.input_text}`}
                       placeholder="Email ID"
                       name="email"
                       onChange={formik.handleChange}
                     />
                   </div>
 
-                  <div className="mt-grid gap-2 sm:grid-cols-2">
-                    <div className={`${styles.input_group} my-3`}>
+                    {/* New input for Username */}
+                    <div className={`${styles.input_group} mt-3`}>
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      className={`${styles.input_text}`}
+                      {...formik.getFieldProps("username")}
+                    />
+                  </div>
+
+                  <div className="mt-grid gap-2 sm:grid-cols-2 md:flex">
+                    <div className={`${styles.input_group} my-3 basis-1/2`}>
                       {/* Country */}
                       <InputField
-                        className="py-4 "
+                        className={`${styles.input_text}`}
                         placeholder="Country"
                         name="country"
                         onChange={formik.handleChange}
                       />
                     </div>
-                    <div className={`${styles.input_group} my-3`}>
+                    <div className={`${styles.input_group} my-3 basis-1/2`}>
                       {/* State */}
                       <InputField
-                        className="py-4"
+                        className={`${styles.input_text}`}
                         placeholder="State"
                         name="state"
                         onChange={formik.handleChange}
@@ -125,16 +136,7 @@ const UserDashboard = () => {
                     </div>
                   </div>
 
-                  {/* New input for Username */}
-                  <div className={`${styles.input_group} my-3`}>
-                    <input
-                      type="text"
-                      name="username"
-                      placeholder="Username"
-                      className={styles.input_text}
-                      {...formik.getFieldProps("username")}
-                    />
-                  </div>
+                
 
                   <div className="mt-5 flex gap-4">
                     <button
@@ -163,10 +165,10 @@ const UserDashboard = () => {
                 </p>
               </div>
               <div>
-              <div className={`${styles.input_group} my-3`}>
+              <div className={`border-none ${styles.input_group} my-3 `}>
                   {/* Address */}
                   <InputField
-                    className="py-4"
+                    className={`${styles.input_text}`}
                     placeholder="Address"
                     name="address"
                     onChange={formik.handleChange}
@@ -175,27 +177,27 @@ const UserDashboard = () => {
                 <div className={`${styles.input_group} my-3`}>
                   {/* City */}
                   <InputField
-                    className="py-4"
+                    className={`${styles.input_text}`}
                     placeholder="City"
                     name="city"
                     onChange={formik.handleChange}
                   />
                 </div>
 
-                <div className="mt-grid gap-2 sm:grid-cols-2 flex">
-                <div className={`${styles.input_group} my-3 basis-1/2`}>
+                <div className="mt-grid gap-2 sm:grid-cols-2 md:flex block">
+                <div className={`${styles.input_group}  basis-1/2 `}>
                     {/* State */}
                     <InputField
-                      className="py-4 "
+                      className={`${styles.input_text}`}
                       placeholder="State"
                       name="state"
                       onChange={formik.handleChange}
                     />
                   </div>
-                  <div className={`${styles.input_group} my-3 basis-1/2`}>
+                  <div className={`${styles.input_group}  basis-1/2`}>
                     {/* Pincode */}
                     <InputField
-                      className="py-4 "
+                      className={`${styles.input_text}`}
                       placeholder="Pincode"
                       name="pincode"
                       onChange={formik.handleChange}

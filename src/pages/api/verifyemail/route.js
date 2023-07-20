@@ -2,12 +2,9 @@ import connectDB from "@/lib/db";
 import { NextRequest,NextResponse } from "next/server";
 import Users from "@/models/Users";
 
-try {
+
     connectDB();
     
-} catch (error) {
-    console.log(error.message);
-}
 
 export async function POST (NextRequest){
     try {

@@ -1,10 +1,10 @@
 .input_group{
-    @apply flex border rounded-xl;
+    @apply flex rounded-xl;
     position: relative;
 }
 
 .input_text{
-    @apply w-full py-4 px-6 border rounded-xl text-white bg-[#272727];
+    @apply w-full py-4 px-6 border rounded-md text-white bg-[#272727] text-sm sm:text-base ;
     @apply focus:outline-none border-none
 }
 
