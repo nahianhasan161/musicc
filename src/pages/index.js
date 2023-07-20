@@ -39,6 +39,7 @@ function Guest() {
 
 // Authorize User
 function User({ session, handleSignOut }) {
+  console.log(session.user)
   return (
     <main className="container mx-auto text-center py-20 text-white space-y-4 min-w-fit">
       <h3 className="text-4xl font-bold">Authorized User Homepage</h3>
@@ -46,6 +47,7 @@ function User({ session, handleSignOut }) {
       <div className="details">
         <h5>{session.user.name}</h5>
         <h5>{session.user.email}</h5>
+        {/* <h5>{...[session.user]}</h5> */}
       </div>
 
       <div className="flex justify-center hover:opacity-80">

@@ -16,6 +16,7 @@ import Logo from "../../public/assests/logo.png";
 export default function Register(){
 
     const [show, setShow] = useState({ password: false, cpassword: false })
+    const [loading,setLoading] = useState(false);
     const router = useRouter()
     const formik = useFormik({
         initialValues: {
@@ -34,12 +35,13 @@ export default function Register(){
             headers : { 'Content-Type': 'application/json'},
             body: JSON.stringify(values)
         }
-
         await fetch('http://localhost:3000/api/auth/signup', options)
+        
             .then(res => res.json())
             .then((data) => {
                 if(data) router.push('http://localhost:3000')
             })
+            
     }
   // Google Handler function
   async function handleGoogleSignin() {
@@ -49,6 +51,7 @@ export default function Register(){
         <>
         <Head>
             <title>Register</title>
+           
         </Head>
 
         <section className='w-full h-screen flex flex-row justify-around items-center gap-10'
@@ -190,6 +193,7 @@ export default function Register(){
                         {/* Add the GoogleButton component here if needed */}
                     </div>
                 </form>
+                        {loading && (<title>Loading...</title>)}
                 <p className="text-center text-white ">
                     Already have an account?{" "}
                     <Link href={"/login"}>

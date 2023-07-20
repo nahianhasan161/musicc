@@ -5,7 +5,7 @@ import bcryptjs from "bcryptjs"
 export const SendEmail = async({email,userId})=>{
     try {
        const hashedToken = await bcryptjs.hash(userId.toString(),10)
-       User.findByIdAndUpdate(userId,
+      await User.findByIdAndUpdate(userId,
         {verifyToken:hashedToken,
             verifyTokenExpire:Date.now()+36000000},
        
@@ -19,12 +19,12 @@ export const SendEmail = async({email,userId})=>{
           pass: "c1e21c4f8918eb"
         }
       });
-      const verifyLink = process.env.NEXTAUTH_URL+"/verifyemail?token="+hashedToken
+      const verifyLink = "http://localhost:3000/verifyemail?token="+hashedToken
       const mailOptions = {
         from : 'hasan@gmail.com',
-        to: 'email',
+        to: email,
         subject:"Verify Password",
-        html:`<p>Click <a href="${verifyLink}</p><br> Copy Here: <strong>${verifyLink}</strong`
+        html:`<p> <a href="${verifyLink}">Click</a></p><br> Copy Here: <strong>${verifyLink}</strong`
 
     }
 
