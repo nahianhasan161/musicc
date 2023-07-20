@@ -10,7 +10,7 @@ import Link from "next/link";
 const HomeHero = () => {
   return (
     <section className="bg-black ml-2">
-      <div className="flex max-w-screen-xl px-4 sm:px-[5rem] md:gap-[15rem]  py-8 mx-auto  xl:gap-0 lg:py-16 lg:grid-cols-12 flex-col md:flex-row ">
+      <div className="flex max-w-screen-xl px-4 sm:px-[5rem] md:gap-10  py-8 mx-auto  xl:gap-0 lg:py-16 lg:grid-cols-12 flex-col lg:flex-row ">
         {/* increased the font */}
         <div className="flex flex-col  leading-[60px]">
           <Heading text="WE" fontWeight="font-bold" />
@@ -49,7 +49,7 @@ text-transform: uppercase; */}
             <p className="sm:text-[20px] text-[16px] font-normal font-AmsiPro-BI">MOOD</p>
             <p className="sm:text-[20px] text-[16px] font-normal font-AmsiPro-BI">BPM</p>
            </div>
-           <div className="flex justify-between items-center order-last md:order-none">
+           <div className="flex justify-between items-center order-last lg:order-none">
             <div className="flex flex-col gap-5">
           
             <h1 className="text-4xl  font-AmsiProNarw-BI font-normal ">50+</h1>
