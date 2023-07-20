@@ -17,22 +17,22 @@ const LevelUp = () => {
          
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col justify-center items-start gap-6">
             <div className="leading-[55px] text-start">
-              <Heading text="LEVEL UP WITH" fontWeight="font-semibold" />
-              <Heading text2="LOWFIED"  fontWeight="font-semibold"/>
+              <Heading text="LEVEL UP WITH" fontWeight="font-semibold" font="font-AmsiProNarw-BI" fontSize="text-[72px]"/>
+              <Heading text2="LOWFIED"  fontWeight="font-semibold" font="font-AmsiProNarw-BI" fontSize="text-[72px]"/>
             </div>
 
-            <div className="sm:w-full w-11/12">
+            <div className="sm:w-full w-11/12 ">
               <Typography
-                variant="h2"
-                className="mb-8 text-lg font-normal text-start text-stone-300 "
+                variant="p"
+                className="mb-8  text-start "
               >
                 Discover the best beats in one place. Search and purchase tracks
                 easily.
               </Typography>
 
               <Typography
-                variant="h2"
-                className="mb-8 text-base font-normal text-start text-stone-300 "
+                variant="p"
+                className=" "
               >
                 Join our community and never miss a beat.
               </Typography>
@@ -42,7 +42,7 @@ const LevelUp = () => {
             <Link href={"/seller"}>
               <Button
                 className={
-                  " italic rounded-full  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-3 sm:py-3"
+                  "  rounded-full   px-8  sm:px-12  py-3 sm:py-3"
                 }
               >
                 START SELLING
@@ -69,13 +69,13 @@ const LevelUp = () => {
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col justify-center items-start gap-6">
             <div className="leading-[55px] text-start">
-              <Heading text="one step" fontWeight="font-semibold"/>
-              <Heading text2="Beat Shop!" fontWeight="font-semibold"/>
+              <Heading text="one step"  font="font-AmsiProNarw-BI"/>
+              <Heading text2="Beat Shop!"  font="font-AmsiProNarw-BI"/>
             </div>
 
             <div className="">
               <Typography
-                variant="h2"
+                variant="p"
                 className="mb-8 text-lg font-normal text-start text-stone-300 "
               >
                 Discover the best beats in one place. Search and purchase tracks
@@ -83,7 +83,7 @@ const LevelUp = () => {
               </Typography>
 
               <Typography
-                variant="h2"
+                variant="p"
                 className="mb-8 text-base font-normal text-start text-stone-300 "
               >
                 Join our community and never miss a beat.
@@ -93,7 +93,7 @@ const LevelUp = () => {
             <Link href={"/tracks"}>
               <Button
                 className={
-                  "italic rounded-full  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-3 sm:py-3"
+                  "rounded-full  px-8  sm:px-12  py-3 sm:py-3"
                 }
               >
                 EXPLORE

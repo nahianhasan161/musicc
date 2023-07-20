@@ -119,9 +119,18 @@ const NavMenu = () => {
                   </li>
                 </>
               ) : (
+                <>
                 <Link href={"/login"}>
                 <li className="cursor-pointer  text-base font-light italic whitespace-nowrap transition-all  hover:scale-110  duration-200 ease-in ">SIGN IN</li>
                 </Link>
+                <Link href={"/login"}>
+                <li
+                    className="border-l-[1px] py-0 border-white pl-4 text-base cursor-pointer font-light italic whitespace-nowrap hover:border-none hover:scale-110  duration-200 ease-in "
+                  >
+                    SIGN UP
+                  </li>
+                  </Link>
+                </>
               )}
             </ul>
           </div>

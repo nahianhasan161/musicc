@@ -1,14 +1,14 @@
 import React from "react";
 
-export const Heading = ({ textColor, text, text2 , fontWeight }) => {
+export const Heading = ({ textColor, text, text2 , fontWeight,font,fontSize }) => {
   return (
-    <h1 className={` ${fontWeight} italic `}>
+    <h1 className={` ${fontWeight} ${font}  italic `}>
       <span
-        className={`text-white sm:text-[80px] text-[60px] uppercase ${textColor} `}
+        className={`font-AmsiProNarw-U font-normal text-white sm:text-[96px]   text-[64px] uppercase ${textColor} `}
       >
         {text}
       </span>
-      <span className={`sm:text-[80px]  text-[60px] uppercase text-[#D8EB55]`}>
+      <span className={`font-AmsiProNarw-U font-normal sm:text-[96px] text-[64px] uppercase text-[#D8EB55]`}>
         {text2}
       </span>
     </h1>

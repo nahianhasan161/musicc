@@ -112,14 +112,14 @@ const BeastStore = () => {
     <>
       {/* header section  */}
       <div className="flex justify-center">
-        <h1 className="font-bold sm:text-[80px] text-[40px] text-center italic">
+        <h1 className="font-normal sm:text-[80px] text-[48px] text-center font-AmsiProNarw-BI">
           <span className="text-white   uppercase  ">EXPLORE OUR </span>
           <span className=" uppercase text-[#D8EB55]">BEASTSTORE</span>
         </h1>
       </div>
       <Typography
         variant="h2"
-        className="mb-8 px-10 sm:text-lg text-xs sm:font-normal  text-center text-[#C3C3C3] mt-4 "
+        className="mb-8 px-10 text-center text-[#C3C3C3] mt-4 font-normal  font-AmsiPro-L text-[16px] md:text-[24px]"
       >
         We know that finding the right beat for your project can be a challenge,
         which is <br className="sm:flex hidden" /> why we offer our wide
@@ -143,11 +143,11 @@ const BeastStore = () => {
                     className="  "
                   />
                   </Link>
-                   <div className="text-white_300">
-                  <h2>{song.title}</h2>
-                  <div className=" items-center gap-2">
-                    <span className="font-light">{song.name}</span>{" "}
-                    <span className="font-light">{song.icon}</span>
+                   <div className="text-white_300 text-16 sm:text-[18px] font-normal ">
+                  <h2 className="font-AmsiPro-SB">{song.title}</h2>
+                  <div className="flex text-[#ADADAD] items-center gap-2  ">
+                    <span className="font-AmsiPro-L">{song.name}</span>{" "}
+                    <span className="">{song.icon}</span>
                   </div>
                 </div>
                 </div>  
@@ -160,7 +160,7 @@ const BeastStore = () => {
       <div className="  text-center sm:px-10 px-4 mt-24">
               <Button
                 className={
-                  " italic rounded-full  font-semibold text-[20px]  sm:text-[24px] px-8  sm:px-12  py-3 sm:py-3"
+                  "  rounded-full      px-8  sm:px-12  py-3 sm:py-3"
                 }
               >
                 START SELLING

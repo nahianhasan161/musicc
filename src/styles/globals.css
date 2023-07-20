@@ -7,8 +7,81 @@
     font-family: AmsiProNarw; 
   }
 }
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiProNarwUltra; 
+  src: url('../../fonts/AmsiPro-UltraItalic.ttf');
+  font-weight: 400;
+  font-style: italic;
+  line-height:88%
+ 
+}
 
 
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiPro-BoldItalic; 
+
+  src: url('../../fonts/AmsiPro-BoldItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiPro-Light; 
+
+  src: url('../../fonts/AmsiPro-Light.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiPro-SemiBold; 
+
+  src: url('../../fonts/AmsiPro-SemiBold.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiProNarw-Light; 
+
+  src: url('../../fonts/AmsiProNarw-Light.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiProNarw-SemiBoldItalic; 
+
+  src: url('../../fonts/AmsiProNarw-SemiBoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiProNarw-BoldItalic; 
+
+  src: url('../../fonts/AmsiProNarw-BoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiProNarw-BlackItalic; 
+
+  src: url('../../fonts/AmsiProNarw-BlackItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  /* font-family: "Rubik"; */
+  font-family: AmsiProNarw-LightItalic; 
+
+  src: url('../../fonts/AmsiProNarw-LightItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
 @font-face {
   /* font-family: "Rubik"; */
   font-family: AmsiProNarw; 
@@ -20,6 +93,15 @@
   
 @font-face {
   /* font-family: "Rubik"; */
+  font-family: AmsiProNarw-BlackItalic; 
+
+  src: url('../../fonts/AmsiProNarw-BlackItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+@font-face {
+   font-family: "AmsiPro-Bold";
   src: url('../../fonts/AmsiPro-Bold.ttf');
   font-weight: bold;
   font-style: normal;

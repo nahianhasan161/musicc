@@ -12,7 +12,19 @@ module.exports = {
         white_100: "#adadad",
         bt_color: "#272727",
       },
-      transitionProperty: { 'scale': 'scale' } 
+      transitionProperty: { 'scale': 'scale' } ,
+      fontFamily:{
+        'AmsiPro-BI' : 'AmsiPro-BoldItalic',
+        'AmsiPro-SB' : 'AmsiPro-SemiBold',
+        'AmsiPro-L' : 'AmsiPro-Light',
+        'AmsiProNarw-L' : 'AmsiProNarw-Light',
+        'AmsiProNarw-LI' : 'AmsiProNarw-LightItalic',
+        'AmsiProNarw-SBI' : 'AmsiProNarw-SemiBoldItalic',
+        'AmsiProNarw-BI' : 'AmsiProNarw-BoldItalic',
+        'AmsiProNarw-BlackI' : 'AmsiProNarw-BlackItalic',
+        'AmsiProNarw-U' : 'AmsiProNarwUltra',
+        'AmsiProNarw-BlackI' : 'AmsiProNarw-BlackItalic'
+      }
     },
   },
   plugins: [],

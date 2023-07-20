@@ -17,7 +17,7 @@ export const Button = ({
         " rounded-[5px]",
 
         variant === "primary"
-          ? " bg-yellow   hover:bg-bt_color  hover:text-white_300 text-black_100 duration-700 transition-colors  "
+          ? " bg-yellow   hover:bg-bt_color  hover:text-white_300 text-black_100 duration-700 transition-colors  font-AmsiProNarw-SBI font-normal text-[16px] sm:text-[20px]"
           : "",
         variant === "secondary"
           ? "  bg-bt_color hover:bg-yellow  hover:text-black_100  text-white hover:bg-zapp-primary transition-colors"

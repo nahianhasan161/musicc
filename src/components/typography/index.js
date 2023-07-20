@@ -19,6 +19,10 @@ const Typography = ({ className, children, variant, ...props }) => {
                   ? " text-sm  font-bold"
                   : variant === "h6"
                     ? " teaxt-base"
+                  : variant === "p"
+                    ? " font-AmsiPro-L font-normal text-[16px] sm:text-[24px] text-[#ADADAD] "
+                  : variant === "span"
+                    ? " font-AmsiProNarw-LI font-normal text-[14px] sm:text-[24px] text-[#ADADAD] "
                     : "",
         className
       )}

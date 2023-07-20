@@ -10,7 +10,7 @@ import Link from "next/link";
 const HomeHero = () => {
   return (
     <section className="bg-black ml-2">
-      <div className="flex max-w-screen-xl px-4 sm:px-[5rem]  py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 ">
+      <div className="flex max-w-screen-xl px-4 sm:px-[5rem] md:gap-[15rem]  py-8 mx-auto  xl:gap-0 lg:py-16 lg:grid-cols-12 flex-col md:flex-row ">
         {/* increased the font */}
         <div className="flex flex-col  leading-[60px]">
           <Heading text="WE" fontWeight="font-bold" />
@@ -24,7 +24,6 @@ const HomeHero = () => {
         </div>
        
 
-        <div className="hidden lg:mt-0 lg:col-span-5 lg:flex ml-auto w-[30rem]">
         {/*   <img
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
             alt="mockup"
@@ -36,32 +35,33 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 text-transform: uppercase; */}
-           <div className="text-[20px] font-bold uppercase text-white flex flex-col gap-12">
+          <div className=" mt-10 sm:my-5 lg:col-span-5 sm:flex ml-auto w-[30rem] ">
+           <div className="text-[20px] font-bold uppercase text-white flex flex-col gap-7 my-3">
             <div className="flex gap-3 items-center justify-between  text-[20px] pr-10 ">
 
            <Button
                 className={
-                  "italic rounded-full  font-semibold text-[20px]  sm:text-[24px] px-4  sm:px-4  py-3 sm:py-3 flex items-center gap-5"
+                  " rounded-full font-AmsiProNarw-BI  font-normal text-[16px]  sm:text-[20px] px-4  sm:px-[18px]  py-3 sm:py-[16px] flex items-center gap-5"
                 }
                 >
                 GENRE<FaArrowDown/>
               </Button>
-            <p className="">MOOD</p>
-            <p className="">BPM</p>
+            <p className="sm:text-[20px] text-[16px] font-normal font-AmsiPro-BI">MOOD</p>
+            <p className="sm:text-[20px] text-[16px] font-normal font-AmsiPro-BI">BPM</p>
            </div>
-           <div className="flex justify-between items-center">
+           <div className="flex justify-between items-center order-last md:order-none">
             <div className="flex flex-col gap-5">
           
-            <h1 className="text-4xl font-bold italic ">50+</h1>
-            <p className="font-light text-[#C3C3C3] text-base">
+            <h1 className="text-4xl  font-AmsiProNarw-BI font-normal ">50+</h1>
+            <p className="font-normal text-[#C3C3C3] text-base font-AmsiPro-L max-w-[10rem]">
             A community of more than 50+ music producers.
             </p>
             </div>
             <div className="flex flex-col gap-5">
 
          
-            <h1 className="text-4xl font-bold italic ">1000+</h1>
-            <p className="font-light text-[#C3C3C3] text-base">And a catalogue of over 1000+ beats which updates, daily!</p>
+            <h1 className="text-4xl font-AmsiProNarw-BI font-normal">1000+</h1>
+            <p className="font-normal text-[#C3C3C3] text-base font-AmsiPro-L max-w-[12rem]">And a catalogue of over 1000+ beats which updates, daily!</p>
             </div>
            </div>
          
